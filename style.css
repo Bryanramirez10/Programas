@@ -1,0 +1,150 @@
+/* reset css */
+
+* {
+    min-width: 0;
+    font: inherit;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  img,
+  video,
+  svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 300dvh;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }
+  
+  body {
+    background-color: #fad7df;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container-letter {
+    position: relative;
+    z-index: 1; /* Asegura que la carta y sobre estén sobre los botones */
+  }
+  
+  .cover {
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #fe3334;
+    border-bottom: 100px solid transparent;
+    transition: transform 0.75s;
+    transform-origin: top;
+    z-index: 2; /* Asegura que el sobre esté sobre la carta */
+  }
+  
+  .paper {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 2rem;
+    right: 5px;
+    background: white;
+    width: 390px;
+    height: auto;
+    z-index: 1;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: opacity 0.75s, transform 0.75s;
+  }
+  
+  .letter {
+    border-left: 200px solid #ff989e;
+    border-right: 200px solid #ff989e;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #ff858a;
+  }
+  
+  .options {
+    display: flex;
+    gap: 5rem;
+    margin-top: 20px;
+    position: fixed; /* Cambia a fixed para que se mantenga en la parte inferior */
+    bottom: 10px; /* Ajusta el espacio desde el borde inferior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra los botones horizontalmente */
+    z-index: 3; /* Mantén el z-index para asegurarte de que esté sobre otros elementos */
+  }
+  
+  
+  .options button {
+    color: #ff3234;
+    font-weight: 600;
+    border-radius: 3px;
+    background: #fad7df;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fe3334;
+    cursor: pointer;
+  }
+  
+  .options button:hover {
+    background: #ff989e;
+    color: white;
+  }
+  
+  .open-cover {
+    transform: rotateX(180deg);
+    z-index: -1;
+  }
+  
+  .open-paper {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  
+  .close-paper {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+  
+  .heart {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 46.5%;
+    margin: auto;
+    font-size: 3rem;
+    color: #fe3334;
+    animation: crecer 1s forwards;
+  }
+  
+  @keyframes crecer {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 3;
+      opacity: 0;
+    }
+  }
+  
